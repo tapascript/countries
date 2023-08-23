@@ -1,6 +1,6 @@
 const Loading = () => {
-  return(
-    <p>Loading Home...</p>
+  return (
+    <p>Loading Countries...</p>
   )
 }
 
