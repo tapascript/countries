@@ -4,7 +4,7 @@ import Loading from './loading';
 
 export const metadata = {
   title: 'Countries - List',
-  description: 'Get to know the countries of the globe',
+  description: 'List of countries in the world.',
 }
 
 const CountryLayout = ({ children }) => {
