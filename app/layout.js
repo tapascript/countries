@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <main className="flex min-h-screen flex-col items-center p-2">
-          
           <nav>
             <h1>Know Countries</h1>
             <div>
