@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import { Suspense} from 'react';
 import Loading from './loading';
 import Link from 'next/link';
-
+import Navbar from '@/components/Navbar';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,16 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex min-h-screen flex-col items-center p-2">
-          
-          <nav>
-            <h1>Know Countries</h1>
-            <div>
-              <Link href="/">Home</Link>
-              |{' '}
-              <Link href="/countries">Countries</Link>
-            </div>
-          </nav>
+        <Navbar />
+        <main className="flex min-h-screen flex-col items-center p-2">  
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
       </body>
