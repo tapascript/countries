@@ -1,4 +1,5 @@
 import {notFound} from 'next/navigation';
+import CountryDetails from '@/components/CountryDetails';
 
 const getCountry = async (countryName) => {
   const res = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
@@ -15,19 +16,7 @@ const Country = async ({params}) => {
   }
   
   return(
-    <>
-      <h2>{`${country?.flag} ${country?.name?.official}`}</h2>
-      <p>{ country?.independent ? "Independent country" : null }</p>
-      <p>{ country?.unMember ? "UN Member" : null}</p>
-      <ul>
-        Capital
-        {
-          country?.capital?.map(capital => (
-            <li key={capital}>{capital}</li>
-          ))
-        }
-      </ul>
-    </>
+      <CountryDetails country={country} />
   )
 }
 

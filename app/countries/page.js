@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CountryList from "@/components/CountryList";
 
 const getCountries = async () => {
   const res = await fetch(`https://restcountries.com/v3.1/all?fields=name,flag`);
@@ -12,18 +12,7 @@ const Countries = async () => {
   return(
     <>
       <h1>Countries</h1>
-
-      <ul>
-        {
-          countries.map(country => (
-            <li key={country.name.common}>
-              <Link href={`/countries/${country.name.common}`}>
-                {country.flag} {country.name.common}
-              </Link>
-            </li>
-          ))
-        }
-      </ul>
+      <CountryList countries={countries} />
     </>
   )
 }
