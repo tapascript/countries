@@ -6,6 +6,13 @@ const getCountry = async (countryName) => {
   return res.json();
 }
 
+export async function generateMetadata({params}) {
+  return {
+    title: `Country - ${params?.name}`,
+    description: 'List of countries in the world.'
+  }
+}
+
 const Country = async ({params}) => {
 
   const data = await getCountry(params?.name);
